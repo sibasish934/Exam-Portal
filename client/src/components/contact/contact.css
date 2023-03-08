@@ -1,0 +1,184 @@
+.contact-heading{
+    text-align: center;
+    font-size: 4rem;
+    margin: 23px auto;
+    padding: 3px 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.contact-heading span{
+    color: #4ec6e7b5;
+}
+.contact-form{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+.le{
+    display: flex;
+    gap: 2rem;
+}
+.input-name{
+   display: flex;
+   flex-direction: column;
+}
+.input-name label{
+    font-size: 20px;
+    font-weight: bold;
+    font-family:cursive;
+    text-transform: capitalize;
+}
+.input-email{
+    display: flex;
+    flex-direction: column;
+}
+.input-email label{
+    font-size: 20px;
+    font-weight: bold;
+    font-family:cursive;
+    text-transform: capitalize;
+}
+.input-name input{
+    text-transform: capitalize;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border:none;
+    background:rgb(234, 232, 232);
+    width: 350px;
+    padding: 7px 12px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family:cursive;
+    border-radius: 10px;
+}
+.input-email input{
+    text-transform: lowercase;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border:none;
+    background:rgb(234, 232, 232);
+    width: 350px;
+    padding: 7px 12px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family:cursive;
+    border-radius: 10px;
+}
+.rig{
+    display: flex;
+    flex-direction: column;
+}
+.rig label{
+    font-size: 20px;
+    font-weight: bold;
+    font-family:cursive;
+    text-transform: capitalize;
+}
+.rig textarea{
+    text-transform: capitalize;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border:none;
+    background:rgb(234, 232, 232);
+    width: 709px;
+    padding: 7px 12px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family:cursive;
+    border-radius: 10px;
+
+}
+
+input[type="submit"]{
+    outline: none;
+    background-color: #4ec6e7b5;
+    color: black;
+    padding: 5px 25px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 13px;
+    /* width: 300px; */
+    width: 100px;
+    font-weight: bold;
+    font-family: cursive;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+input[type="submit"]:hover{
+    background: none;
+    border: 5px solid #4ec6e7b5;
+    transition: ease-in-out;
+}
+
+@media screen and (max-width:600px) {
+    .le{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+    }
+    .le .input-name label{
+        margin-left: 13px;
+    }
+    .le .input-name input{
+        width: 285px;
+        margin-left: 13px;
+    }
+    .le .input-email label{
+        margin-left: 13px;
+    }
+    .le .input-email input{
+       width: 285px;
+       margin-left: 13px;
+    }
+    .rig{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .rig textarea{
+        width: 90%;
+        height: auto;
+        resize: vertical;
+    }
+}
+
+
+@media screen and (max-width:280px) {
+    .le{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+    }
+    .le .input-name label{
+        margin-left: 13px;
+    }
+    .le .input-name input{
+        width:200px;
+        margin-left: 13px;
+    }
+    .le .input-email label{
+        margin-left: 13px;
+    }
+    .le .input-email input{
+       width:200px;
+       margin-left: 13px;
+    }
+}
+
+
+
+@media screen and (max-width:768px) and (min-width:600px) {
+    .le{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:0.8rem;
+    }
+    .rig textarea{
+        width: 94%;
+    }
+}
