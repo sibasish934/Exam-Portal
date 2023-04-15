@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -21,7 +23,8 @@
 
 .home p {
   padding: 6px;
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-size: 15px;
 }
 .home span {
   color: #45a2befd;
@@ -36,7 +39,7 @@
   font-size: 15px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .image {
@@ -67,7 +70,7 @@
 }
 
 .btn-resume {
-  margin: 11px 0px;
+  margin: 11px auto;
   border-radius: 23px;
   font-size: large;
   background-color: #000;
@@ -120,7 +123,8 @@
 
 .home1 p {
   margin-top: 22px;
-  font-weight: 500;
+  /* font-weight: 500; */
+  font-size: 15px;
 }
 
 .service-section {

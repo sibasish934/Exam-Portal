@@ -1,42 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../Login/login.css";
+import image from "../../assets/exam.png";
 const Login = () => {
+  const [ user, setUser] = useState({
+    email:"",
+    password:""
+  })
+
+  const handleChange = (e)=>{
+     const {name, value} = e.target;
+     setUser({...user, [name]:value});
+  }
+
+  const handleSubmit = (e)=>{
+      e.preventDefault();
+      console.log(user);
+  }
+  
   return (
-    <div className="login-cont">
-      <div className="box-form">
-        <div className="left">
-          <h5>Login to Your Account</h5>
-          <div className="inputs">
-            <input type="text" placeholder="User Name" required />
-            <br />
-            <input type="password" placeholder="Password" required />
+    <section className="login-section">
+      <div className="login-page">
+        <div className="form">
+          <div className="login">
+            <div className="login-header">
+              <h3 className="setter"><img src={image} alt="" className="insideh3"/><span>Exam-Portal</span></h3>
+              <p>Please enter your credentials to login.</p>
+            </div>
           </div>
-          <br />
-          <br />
-          <button>Sign In</button>
-          <span>
-            <p>login with social media</p>
-            <Link href="https://www.facebook.com/" className="f">
-              <i className="fa fa-facebook " aria-hidden="true"></i>
-            </Link>
-            <Link href="https://twitter.com/" className="t">
-              <i className="fa fa-twitter " aria-hidden="true"></i>
-            </Link>
-            <Link href="https://www.google.com/" className="g">
-              <i className="fa fa-google" aria-hidden="true"></i>
-            </Link>
-          </span>
-        </div>
-        <div class="right">
-          <div class="overlay">
-            <h1>New Here?</h1>
-            <p>Sign up and discover a great amount of new opportunities!</p>
-            <button><Link to="/register" className="link">Sign up</Link></button>
-          </div>
+          <form className="login-form" onSubmit={handleSubmit}>
+            <input type="email" placeholder="email" name="email" value={user.email} onChange={handleChange} />
+            <input type="password" placeholder="password" name="password" value={user.password} onChange={handleChange} />
+            <button>login</button>
+            <p className="message">
+              Not registered? <Link to="/register" >Create an account</Link>
+            </p>
+          </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
