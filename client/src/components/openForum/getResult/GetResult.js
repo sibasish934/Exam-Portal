@@ -27,7 +27,7 @@ const GetResult = () => {
     
   return (
     <div>
-      this is get Result page.
+     this is answers page.
     </div>
   )
 }
