@@ -1,6 +1,6 @@
 .heading button{
     position: absolute;
-    top: 29%;
+    top: 30%;
     right: 60px;
     padding: 12px 11px 12px 11px;
     font-size: 17px;
@@ -10,34 +10,28 @@
 .open-forum-content{
     padding-top: 12px;
 }
-
-.open-forum-content h2{
+.open-forum{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 23px 12px;
+    border-bottom: 2px solid black;
+}
+.open-forum h2{
     margin-top: 23px;
     text-align: left;
-    font-size: 50px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 23px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     padding: 12px;
 }
 
-.open-forum-content p{
-    text-align: left;
-    font-size: 23px;
-    padding: 12px;
+.open-forum .answer{
+    padding: 12px 11px 12px 11px;
+    font-size: 17px;
+    background-color: #c62cfe;
+    color: #fff;
+    margin-right: 23px;
 }
 
-.open-forum-content .socials{
-    display: flex;
-    align-items:center;
-    justify-content: flex-start;
-}
 
-.open-forum-content .socials i{
-    font-size: 23px;
-    margin-left: 23px;
-    padding: 6px;
-}
-
-.open-forum-content .socials span{
-    font-size: 23px;
-    padding: 6px;
-}

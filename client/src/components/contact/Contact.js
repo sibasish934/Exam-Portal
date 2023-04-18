@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./contact.css";
+import { Context } from '../..';
+import { Navigate } from 'react-router-dom';
 
 const Contact = () => {
+
+  const {isAuthenticated} = useContext(Context);
 
   const [details, setDetails] = useState({
     name: "",
@@ -13,6 +17,9 @@ const Contact = () => {
     const { name, value } = e.target;
     setDetails({ ...details, [name]: value });
   }
+
+  if(!isAuthenticated) return <Navigate to={"/"} />
+
   return (
     <div>
       <h2 className='contact-heading'>Contact <span>Me</span></h2>

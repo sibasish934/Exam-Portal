@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Mywall.css";
-import user from "../../assets/user.png";
+// import user from "../../assets/user.png";
+import { backend_url } from "../../App";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { Navigate } from "react-router-dom";
+import { Context } from "../..";
 const Mywall = () => {
+
+  const { isAuthenticated,setIsAuthenticated, loading, setLoading, userData} = useContext(Context);
+
+  const logoutHandler = async()=>{
+    setLoading(true)
+    try {
+      const { data} = await axios.get(`${backend_url}/logout`,{
+        withCredentials:true
+      })
+      toast.success(data.message);
+      setIsAuthenticated(false);
+      setLoading(false)
+    } catch (error) {
+      toast.error(error.response.data.message);
+      setIsAuthenticated(true);
+      setLoading(false);
+    }
+  }
+
+  if (!isAuthenticated) return <Navigate to={"/"} />;
+
+
   return (
     <>
       <div className="mywall-conatiner">
@@ -9,19 +36,13 @@ const Mywall = () => {
           <div className="profile-card">
             {/*Profile top view card*/}
             <div className="left-side">
-              <img src={user} alt="" />
-              <h2>Arun Hota</h2>
+              <img src={userData.photo} alt="" />
+              <h2>{userData.name}</h2>
             </div>
             <div className="right-side">
+              <p>{userData.description}</p>
               <p>
-                I am a student pursuing Computer Science and Engineering at
-                Silicon Institute of Technology. I am always eager to explore
-                the world of computer Science and software development . Main
-                areas of interest include Web-development, Machine Learning, and
-                Cloud Computing.
-              </p>
-              <p>
-                My Skills:- <span>Html, Css, Js , React</span>
+                My Skills:- <span>{userData.skills}</span>
               </p>
             </div>
           </div>
@@ -78,7 +99,7 @@ const Mywall = () => {
           </div>
           <div className="navigation">
             {/*navgiation such as logout option*/}
-            <button>Logout</button>
+            <button disabled={loading} onClick={logoutHandler}>Logout</button>
           </div>
         </div>
       </div>

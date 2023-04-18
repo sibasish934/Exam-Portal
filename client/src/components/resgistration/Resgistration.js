@@ -1,15 +1,23 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import image from "../../assets/exam.png";
+import axios from "axios";
+import toast from "react-hot-toast"
+import { Context } from "../..";
+// import { backend_url } from "../../App";
 const Resgistration = () => {
+   
+  const {  setIsAuthenticated } = useContext(Context);
+
+  const navigate = useNavigate();
   
   const [user , setUser] = useState({
     name:"",
     photo:"",
     email:"",
     password:"",
-    skill:"",
+    skills:"",
     description:"",
   })
 
@@ -20,7 +28,34 @@ const Resgistration = () => {
 
   const handleSubmit = (e)=>{
     e.preventDefault();
-    console.log(user);
+    registered();
+  }
+
+  const registered = async ()=>{
+     try {
+      const { name, email, password, photo, description, skills } = user;
+      const {data} = await axios.post('http://localhost:5000/api/v1/register',{
+         name,
+         email,
+         password,
+         photo,
+         description,
+         skills
+      }, {
+        headers: {
+          "Content-type": "application/json",
+        },
+        withCredentials: true,
+      } );
+
+      toast.success(data.message);
+      setIsAuthenticated(true);
+      navigate('/login');
+     } catch (error) {
+       toast.error(error.response.data.message);
+       setIsAuthenticated(false);
+       navigate('/home');
+     }
   }
 
   return (
@@ -54,7 +89,7 @@ const Resgistration = () => {
               </div>
               <div className="input-box">
                 <span className="details">My Skills</span>
-                <input type="text" placeholder="Enter your skills" name="skill" value={user.skill} onChange={handleChange} required />
+                <input type="text" placeholder="Enter your skills" name="skills" value={user.skills} onChange={handleChange} required />
               </div>
               <div className="input-box">
                 <span className="details">Password</span>

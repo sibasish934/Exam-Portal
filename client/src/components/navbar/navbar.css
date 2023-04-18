@@ -89,7 +89,19 @@
     font-size: 17px;
     border-radius: 12px;
 }
+.contact-btn{
+    border: none;
+    background-color: #000;
+    color: #fff;
+    padding: 12px 22px;
+    font-size: 17px;
+    border-radius: 12px;
+}
 .login-btn:hover{
+    background-color: azure;
+    color: #000;
+}
+.contact-btn:hover{
     background-color: azure;
     color: #000;
 }

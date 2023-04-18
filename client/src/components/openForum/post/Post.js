@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import "./post.css";
+import axios from "axios";
+import { backend_url } from "../../../App";
+import toast  from "react-hot-toast";
 const Post = () => {
+
     const [details , setDetails] = useState({
         title: "",
         intution:"",
@@ -14,9 +18,27 @@ const Post = () => {
         setDetails({...details, [name]:value});
     }
     const navigate = useNavigate();
-    const handleSubmit = () => {
-        navigate('/open');
+    const handleSubmit = async () => {
+        try {
+            const { title, intution, approach, solution } = details;
+            const {data} = await axios.post(`${backend_url}/post`,{
+                title,
+                intution,
+                approach,
+                solution
+            }, {
+                    headers: {
+                      "Content-type": "application/json",
+                    },
+                    withCredentials: true,
+            })
+            toast.success(data.message);
+            navigate("/openforum");
+        } catch (error) {
+            toast.error(error.response.data.message);
+        }
     }
+
     return (
         <>
             <form onSubmit={handleSubmit}>

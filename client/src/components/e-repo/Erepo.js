@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import Footer from "../footer/Footer";
+// import Footer from "../footer/Footer";
 const Ereop = () => {
   const exam = [
     {

@@ -2,7 +2,7 @@ import { question } from "../model/question.js";
 import {answer} from "../model/answer.js";
 export const postController = async(req,res,next)=>{
     const {title, intution, approach, solution} = req.body;
-    const user = "45refd567dhdgnhshhsoi";
+    // req.body.user = req.user.id;
 
     const data = await question.findOne({title});
     //console.log(data);
@@ -12,7 +12,7 @@ export const postController = async(req,res,next)=>{
             approach,
             solution,
             question : data._id,
-            user,
+            user:req.user._id,
         }
 
         await answer.create(questionOptions);
@@ -30,7 +30,7 @@ export const postController = async(req,res,next)=>{
             approach,
             solution,
             question: Question._id,
-            user,
+            user:req.user._id,
         }
 
         await answer.create(options);
@@ -54,7 +54,7 @@ export const getAnswers = async(req, res, next) =>{
     const {id} = req.params;
     const answers = await answer.find({
         question:id
-    });
+    }).populate('user', "name").populate("question", "title");
 
     res.status(200).json({
         success:true,
