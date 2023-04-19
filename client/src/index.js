@@ -7,11 +7,11 @@ import { BrowserRouter as Router } from "react-router-dom";
 export const Context = createContext({ isAuthenticated: false});
 
 const Appwrapper = ()=>{
- 
+
   const [isAuthenticated , setIsAuthenticated] = useState(false);
   const [loading , setLoading] = useState(false);
   const [userData, setUserData] = useState({}); 
-
+  
   return(
     <Context.Provider value={{
       isAuthenticated,

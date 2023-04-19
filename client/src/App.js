@@ -19,9 +19,9 @@ import axios from "axios";
 
 const App = () => {
 
-   const {setUserData, setIsAuthenticated,} = useContext(Context);
+   const {setUserData, setIsAuthenticated} = useContext(Context);
 
-   const navigate = useNavigate();
+    const navigate = useNavigate();
 
    useEffect(() => {
     const getUserDetails = async () => {
@@ -29,23 +29,20 @@ const App = () => {
         const { data } = await axios.get(`${backend_url}/me`, {
           withCredentials: true,
         });
-        // console.log(data.user);
+        //console.log(data.user);
         setUserData(data.user);
         setIsAuthenticated(true)
       } catch (error) {
         toast.error(error.response.data.message);
-        setIsAuthenticated(false)
-        navigate("/login");
+        setIsAuthenticated(false);
       }
     };
     getUserDetails();
-  }, [navigate, setUserData, setIsAuthenticated]);
+  }, [navigate,setUserData, setIsAuthenticated]);
 
-   
-
-  
   return (
     <div>
+      {/* <Home /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/e-repo" element={[<Navbar />, <Ereop />]} />

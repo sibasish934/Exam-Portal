@@ -55,7 +55,9 @@ const Login = () => {
     }
   };
 
+
   if (isAuthenticated) return <Navigate to={"/mywall"} />; 
+
 
   return (
     <section className="login-section">
