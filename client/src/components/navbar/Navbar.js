@@ -68,7 +68,7 @@ function Navbar() {
                 <NavLink
                   exact
                   to="/contact"
-                  activeClassName="active"
+                  // activeClassName="active"
                   className="nav-links"
                   onClick={handleClick}
                 >

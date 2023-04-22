@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./style.css";
+import { Context } from "../..";
+import { Navigate } from  "react-router-dom";
 // import Footer from "../footer/Footer";
 const Ereop = () => {
+  const { isAuthenticated } = useContext(Context);
   const exam = [
     {
       heading: "6th Semester Exam",
@@ -54,6 +57,8 @@ const Ereop = () => {
         "Students availing the exam will get to solve the previous years Xat and Mat exam to prepare for the upcoming Xat and Mat entrance exam.",
     },
   ];
+
+  if (!isAuthenticated) return <Navigate to={"/"} />;
 
   return (
     <div>

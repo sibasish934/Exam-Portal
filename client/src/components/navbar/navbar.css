@@ -88,6 +88,8 @@
     padding: 12px 22px;
     font-size: 17px;
     border-radius: 12px;
+    font-family: cursive;
+    text-transform: uppercase;
 }
 .contact-btn{
     border: none;
@@ -96,6 +98,8 @@
     padding: 12px 22px;
     font-size: 17px;
     border-radius: 12px;
+    font-family: cursive;
+    text-transform: uppercase;
 }
 .login-btn:hover{
     background-color: azure;
