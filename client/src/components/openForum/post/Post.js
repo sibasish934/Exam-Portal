@@ -18,7 +18,8 @@ const Post = () => {
         setDetails({...details, [name]:value});
     }
     const navigate = useNavigate();
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         try {
             const { title, intution, approach, solution } = details;
             const {data} = await axios.post(`${backend_url}/post`,{
