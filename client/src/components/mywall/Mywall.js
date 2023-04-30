@@ -6,6 +6,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Navigate } from "react-router-dom";
 import { Context } from "../..";
+import Footer from "../footer/Footer";
 const Mywall = () => {
 
   const { isAuthenticated,setIsAuthenticated, loading, setLoading, userData} = useContext(Context);
@@ -31,7 +32,7 @@ const Mywall = () => {
 
   return (
     <>
-      <div className="mywall-conatiner">
+      <section className="mywall-conatiner">
         <div className="cards">
           <div className="profile-card">
             {/*Profile top view card*/}
@@ -102,7 +103,8 @@ const Mywall = () => {
             <button disabled={loading} onClick={logoutHandler}>Logout</button>
           </div>
         </div>
-      </div>
+      </section>
+      <Footer />
     </>
   );
 };

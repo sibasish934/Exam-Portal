@@ -1,0 +1,128 @@
+.Home_Div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  height: 90vh;
+  color: #fff;
+}
+
+.inputName {
+  margin: 23px;
+  padding: 12px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  width: 30%;
+  border: none;
+  font-size: medium;
+}
+
+.inputName:focus {
+  border: none;
+}
+
+.error {
+  color: #9900f8;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.Home_Div button:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.Instructions_Div {
+  margin-top: 2rem;
+}
+
+.Instructions_Div > button {
+  margin: auto;
+  display: block;
+  padding: 12px 24px;
+}
+.read p {
+  text-align: left;
+  margin-left: 40px;
+}
+
+.quizbanner {
+  background-color: rgb(139, 0, 139);
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+h1,
+h3,
+h4 {
+  padding: 3px;
+}
+
+.answerCss {
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.un {
+  list-style: none;
+  margin: 4% 0;
+  padding: 0;
+}
+
+.un > li {
+  font-size: 2rem;
+  border-radius: 20px;
+  margin: 2rem;
+  color: #000;
+  box-shadow: rgb(20 1 1 / 15%) 0px 3px 15px;
+  padding: 16px 25px;
+}
+
+.un > li:hover {
+  cursor: pointer;
+}
+
+.un > li::before {
+  content: "\2022";
+  color: #000;
+  font-weight: bold;
+  display: inline-block;
+  width: 2em;
+  font-size: 1.5rem;
+}
+
+.quizQuestions {
+  text-align: left;
+  font-size: 2rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  margin: 23px 23px;
+}
+
+.time {
+  font-size: 3rem;
+  padding: 10px 25px;
+  border-radius: 12px;
+  color: #9900f8;
+}
+
+.buttons_div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset{
+  padding: 12px 24px;
+  margin: 23px;
+}
+.exit{
+  padding: 12px 24px;
+}

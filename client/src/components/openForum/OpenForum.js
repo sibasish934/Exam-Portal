@@ -4,6 +4,7 @@ import axios from "axios";
 import "./open.css";
 import { toast } from "react-hot-toast";
 import { Context } from "../..";
+import Footer from "../footer/Footer";
 
 const OpenForum = () => {
 
@@ -42,6 +43,7 @@ const OpenForum = () => {
 
   return (
     <>
+     <section>
       <div className="heading">
         <h2> Welcome To OpenForum</h2>
         <p>
@@ -61,6 +63,8 @@ const OpenForum = () => {
           );
         })}
       </div>
+      </section>
+      <Footer />
     </>
   );
 };
