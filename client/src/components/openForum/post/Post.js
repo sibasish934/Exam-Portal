@@ -79,7 +79,7 @@ const Post = () => {
                     rows="4" 
                     cols="50"
                     name="solution"
-                    placeholder="Enter the Question."
+                    placeholder="Enter the solution."
                     onChange={handleChange}
                     value={details.solution}
                 ></textarea>
