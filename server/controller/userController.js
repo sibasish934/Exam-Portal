@@ -18,11 +18,12 @@ export const register = catchAsyncError(async (req,res,next) =>{
     sendToken(user,201,res,"User registered Successfully");
 })
 
-export const loginUser = catchAsyncError(async (req,res,next) =>{
+export const loginUser = catchAsyncError(async (req,res,next) =>{   //->  const loginUser = async(res, res, next)+>[
     const {email, password} = req.body;
     
     if(!email || !password){
         return next(new ErrorHandler("Pls Enter Email and Password",401));
+        //return res.status(200).json/send()
     }
 
     const user = await User.findOne({email}).select("+password");
